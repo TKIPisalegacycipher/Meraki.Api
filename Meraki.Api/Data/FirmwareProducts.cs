@@ -44,7 +44,7 @@ public class FirmwareProducts
 	/// <summary>
 	/// switch
 	/// </summary>
-	[ApiAccess(ApiAccess.ReadUpdate)]
+	[ApiAccess(ApiAccess.ReadCreate)]
 	[DataMember(Name = "switch")]
 	public FirmwareUpgradeProduct Switch { get; set; } = new();
 

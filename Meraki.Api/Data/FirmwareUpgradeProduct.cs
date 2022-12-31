@@ -23,7 +23,7 @@ public class FirmwareUpgradeProduct
 	/// <summary>
 	/// Next upgrade
 	/// </summary>
-	[ApiAccess(ApiAccess.ReadUpdate)]
+	[ApiAccess(ApiAccess.ReadCreate)]
 	[DataMember(Name = "nextUpgrade")]
 	public NextUpgrade NextUpgrade { get; set; } = new();
 

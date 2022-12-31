@@ -37,7 +37,7 @@ public class FirmwareUpgradesRollback
 	public ToVersion ToVersion { get; set; } = new();
 
 	/// <summary>
-	/// Reasons
+	/// Reasons for the rollback
 	/// </summary>
 	[DataMember(Name = "reasons")]
 	public List<Reasons> Reasons { get; set; } = new();

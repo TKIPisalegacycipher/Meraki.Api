@@ -9,7 +9,7 @@ public class Version
 	/// <summary>
 	/// Id
 	/// </summary>
-	[ApiAccess(ApiAccess.Read)]
+	[ApiAccess(ApiAccess.ReadCreate)]
 	[DataMember(Name = "id")]
 	public int Id { get; set; }
 

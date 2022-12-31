@@ -13,4 +13,17 @@ public interface IDeviceSensorRelationships
 		string serial,
 		CancellationToken cancellationToken = default
 		);
+
+	/// <summary>
+	/// Assign one or more sensor roles to a given device.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="serial">The serial id</param>
+	[ApiOperationId("updateDeviceSensorRelationships")]
+	[Put("/devices/{serial}/sensor/relationships")]
+	Task<DeviceSensorRelationship> UpdateDeviceSensorRelationshipsAsync(
+		[Body] UpdateDeviceSensorRelationships updateDeviceSensorRelationships,
+		string serial,
+		CancellationToken cancellationToken = default
+		);
 }

@@ -16,7 +16,7 @@ public class NextUpgrade
 	/// <summary>
 	/// To version
 	/// </summary>
-	[ApiAccess(ApiAccess.ReadUpdate)]
+	[ApiAccess(ApiAccess.ReadCreate)]
 	[DataMember(Name = "toVersion")]
 	public Version ToVersion { get; set; } = new();
 }
