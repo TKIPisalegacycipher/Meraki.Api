@@ -9,7 +9,7 @@ public class FirmwareUpgradesStage
 	/// <summary>
 	/// Current upgrade status of the group
 	/// </summary>
-	[ApiAccess(ApiAccess.Read)]
+	[ApiAccess(ApiAccess.ReadCreate)]
 	[DataMember(Name = "status")]
 	public string? Status { get; set; }
 

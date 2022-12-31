@@ -99,7 +99,20 @@ public interface INetworksFirmwareUpgrades
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
-	/// List of Staged Upgrade Groups in a network
+	/// Delete a Staged Upgrade Group
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="networkId">The network id</param>
+	/// <param name="groupId">The group id</param>
+	[ApiOperationId("deleteNetworkFirmwareUpgradesStagedGroup")]
+	[Delete("/networks/{networkId}/firmwareUpgrades/staged/groups/{groupId}")]
+	Task DeleteNetworkFirmwareUpgradesStagedGroupAsync(
+		[AliasAs("networkId")] string networkId,
+		[AliasAs("groupId")] string groupId,
+		CancellationToken cancellationToken = default);
+
+	/// <summary>
+	/// Get a Staged Upgrade Group from a network
 	/// </summary>
 	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
 	/// <param name="networkId">The network id</param>
@@ -131,6 +144,43 @@ public interface INetworksFirmwareUpgrades
 	[Post("/networks/{networkId}/firmwareUpgrades/staged/groups")]
 	Task<FirmwareStagedGroup> CreateNetworkFirmwareUpgradesStagedGroupAsync(
 		[Body] FirmwareStagedGroup createNetworkFirmwareUpgradesStagedGroup,
+		[AliasAs("networkId")] string networkId,
+		CancellationToken cancellationToken = default);
+
+	/// <summary>
+	/// Update a Staged Upgrade Group for a network
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="networkId">The network id</param>
+	/// <param name="groupId">The group id</param>
+	[ApiOperationId("updateNetworkFirmwareUpgradesStagedGroup")]
+	[Post("/networks/{networkId}/firmwareUpgrades/staged/groups/{groupId}")]
+	Task<FirmwareStagedGroup> UpdateNetworkFirmwareUpgradesStagedGroupAsync(
+		[Body] FirmwareStagedGroup updateNetworkFirmwareUpgradesStagedGroup,
+		[AliasAs("networkId")] string networkId,
+		[AliasAs("groupId")] string groupId,
+		CancellationToken cancellationToken = default);
+
+	/// <summary>
+	/// Order of Staged Upgrade Groups in a network
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="networkId">The network id</param>
+	[ApiOperationId("getNetworkFirmwareUpgradesStagedStages")]
+	[Get("/networks/{networkId}/firmwareUpgrades/staged/stages")]
+	Task<List<FirmwareUpgradesStage>> GetNetworkFirmwareUpgradesStagedStagesAsync(
+		[AliasAs("networkId")] string networkId,
+		CancellationToken cancellationToken = default);
+
+	/// <summary>
+	/// Assign Staged Upgrade Group order in the sequence.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="networkId">The network id</param>
+	[ApiOperationId("updateNetworkFirmwareUpgradesStagedStages")]
+	[Put("/networks/{networkId}/firmwareUpgrades/staged/stages")]
+	Task<List<FirmwareUpgradesStage>> UpdateNetworkFirmwareUpgradesStagedStagesAsync(
+		[Body] FirmwareUpgradesStageUpdateRequest updateNetworkFirmwareUpgradesStagedStages,
 		[AliasAs("networkId")] string networkId,
 		CancellationToken cancellationToken = default);
 }
