@@ -68,4 +68,25 @@ public class DhcpV4Server
 	[ApiAccess(ApiAccess.Read)]
 	[DataMember(Name = "ipv4")]
 	public DhcpV4ServerIpv4Attributes? Ipv4 { get; set; }
+
+	/// <summary>
+	/// Attributes of the server's last ack.
+	/// </summary>
+	[ApiAccess(ApiAccess.Read)]
+	[DataMember(Name = "lastAck")]
+	public DhcpV4ServerLastAck? LastAck { get; set; }
+
+	/// <summary>
+	/// Last packet the server received
+	/// </summary>
+	[ApiAccess(ApiAccess.Read)]
+	[DataMember(Name = "lastPacket")]
+	public DhcpV4ServerLastPacket? LastPacket { get; set; }
+
+	/// <summary>
+	/// Devices that saw the server
+	/// </summary>
+	[ApiAccess(ApiAccess.Read)]
+	[DataMember(Name = "seenBy")]
+	public DhcpV4ServerSeenBy? SeemBy { get; set; }
 }
