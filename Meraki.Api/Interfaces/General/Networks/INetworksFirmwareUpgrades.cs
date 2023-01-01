@@ -154,7 +154,7 @@ public interface INetworksFirmwareUpgrades
 	/// <param name="networkId">The network id</param>
 	/// <param name="groupId">The group id</param>
 	[ApiOperationId("updateNetworkFirmwareUpgradesStagedGroup")]
-	[Post("/networks/{networkId}/firmwareUpgrades/staged/groups/{groupId}")]
+	[Put("/networks/{networkId}/firmwareUpgrades/staged/groups/{groupId}")]
 	Task<FirmwareStagedGroup> UpdateNetworkFirmwareUpgradesStagedGroupAsync(
 		[Body] FirmwareStagedGroup updateNetworkFirmwareUpgradesStagedGroup,
 		[AliasAs("networkId")] string networkId,
