@@ -4,7 +4,7 @@
 /// Related devices for the role
 /// </summary>
 [DataContract]
-public class RelatedDevices
+public class RelatedDevices : NamedItem
 {
 	/// <summary>
 	/// The serial of the related device

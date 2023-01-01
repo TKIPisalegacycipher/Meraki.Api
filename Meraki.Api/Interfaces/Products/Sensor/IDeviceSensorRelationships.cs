@@ -15,6 +15,18 @@ public interface IDeviceSensorRelationships
 		);
 
 	/// <summary>
+	/// List the sensor roles for devices in a given network
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="networkId">The network id</param>
+	[ApiOperationId("getNetworkSensorRelationships")]
+	[Get("/networks/{networkId}/sensor/relationships")]
+	Task<List<NetworkSensorRelationship>> GetNetworkSensorRelationshipsAsync(
+		string networkId,
+		CancellationToken cancellationToken = default
+		);
+
+	/// <summary>
 	/// Assign one or more sensor roles to a given device.
 	/// </summary>
 	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
